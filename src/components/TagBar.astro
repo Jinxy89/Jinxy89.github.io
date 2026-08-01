@@ -79,10 +79,11 @@ const { tags } = Astro.props;
 </style>
 
 <script>
-  const bar = document.querySelector<HTMLElement>("[data-tagbar]");
-  const empty = document.querySelector<HTMLElement>("[data-tagbar-empty]");
+  const initTagBar = () => {
+    const bar = document.querySelector<HTMLElement>("[data-tagbar]");
+    const empty = document.querySelector<HTMLElement>("[data-tagbar-empty]");
+    if (!bar) return;
 
-  if (bar) {
     const chips = Array.from(
       bar.querySelectorAll<HTMLButtonElement>("button[data-tag]"),
     );
@@ -112,5 +113,10 @@ const { tags } = Astro.props;
       chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
       applyFilter(chip.dataset.tag || "all");
     });
-  }
+  };
+
+  // View Transitions swap the DOM without re-running module scripts, so the bar
+  // must be re-bound after every client-side navigation. astro:page-load also
+  // fires on the initial load, so this one listener covers both cases.
+  document.addEventListener("astro:page-load", initTagBar);
 </script>
