@@ -1,0 +1,213 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+import { AUTHOR_INITIAL } from "src/config";
+---
+
+<BaseLayout title={AUTHOR_INITIAL + " | Resume"} sideBarActiveItemID="cv">
+    <div class="mb-6">
+        <div class="text-3xl w-full font-bold">Jieyi Wang</div>
+        <div class="mt-1 text-sm flex flex-wrap gap-x-4">
+            <a href="mailto:jwang3748@gatech.edu">jwang3748@gatech.edu</a>
+            <a href="https://www.linkedin.com/in/jinxywang" target="_blank"
+                >LinkedIn: jinxywang</a
+            >
+            <span>+1-267-888-8906</span>
+        </div>
+    </div>
+
+    <div class="text-2xl w-full font-bold mb-3">Education</div>
+
+    <div class="time-line-container grid mb-6">
+        <TimeLineElement
+            title="Georgia Institute of Technology — BS in Mathematics and Computing"
+            subtitle="Jan 2026 - May 2028 | Atlanta, GA"
+        >
+            <ul class="list-disc ml-4 space-y-0.5">
+                <li>
+                    <span class="font-semibold">Concentration:</span> Mathematical
+                    Intelligence and Data Science
+                </li>
+                <li>
+                    <span class="font-semibold">Coursework:</span> Data Structure
+                    &amp; Algorithm, Data Manipulation, Probability with Apps, Discrete
+                    Math
+                </li>
+                <li>
+                    <span class="font-semibold">Planned Coursework:</span> Real Analysis,
+                    Linear Algebra II, Machine Learning, Statistical Theory for ML
+                </li>
+            </ul>
+        </TimeLineElement>
+        <TimeLineElement
+            title="Dickinson College — BS in Computer Science w/ merit Scholarship"
+            subtitle="Sep 2024 - Dec 2025 | Carlisle, PA"
+        >
+            <ul class="list-disc ml-4 space-y-0.5">
+                <li>
+                    <span class="font-semibold">Coursework:</span> Linear Programming,
+                    Stats &amp; Probability, Mathematics Proof, Software Development,
+                    GIS Application
+                </li>
+            </ul>
+        </TimeLineElement>
+        <TimeLineElement
+            title="Boston University — Summer Visiting Student"
+            subtitle="May 2025 - Aug 2025 | Boston, MA"
+        >
+            <ul class="list-disc ml-4 space-y-0.5">
+                <li>
+                    <span class="font-semibold">Coursework:</span> Linear Algebra,
+                    Multivariable Calculus
+                </li>
+            </ul>
+        </TimeLineElement>
+    </div>
+
+    <div class="text-2xl w-full font-bold mb-3">Skills</div>
+
+    <ul class="list-disc mx-5 mb-6 space-y-1">
+        <li>
+            <span class="font-semibold">Languages:</span> Python, Java, JavaScript,
+            R, p5.js, Node.js, React, Mosel, SQL
+        </li>
+        <li>
+            <span class="font-semibold">Tools:</span> Docker, Git, ArcGIS, LaTeX,
+            AutoCAD, Adobe Creative Suite, SketchUp, TouchDesigner
+        </li>
+        <li>
+            <span class="font-semibold">Platforms:</span> Linux, Web, Windows, Arduino
+        </li>
+    </ul>
+
+    <div class="text-2xl w-full font-bold mb-3">Experience</div>
+
+    <div class="time-line-container mb-6">
+        <TimeLineElement
+            title="Co-Founder & Agent Engineer at Ampora AI - CREATE X, Georgia Tech"
+            subtitle="Apr 2026 - present"
+        >
+            <ul class="list-disc ml-4 space-y-1">
+                <li>
+                    <span class="font-semibold"
+                        >Real-time Interview Agent Design:</span
+                    > Designing AI workflows for Ampora's LLM-based real-time interview
+                    agent, including conversation routing logic, prompt structure,
+                    and evaluation criteria for response quality and consistency.
+                </li>
+                <li>
+                    <span class="font-semibold"
+                        >Multi-Agents Product Iteration:</span
+                    > Defining feature requirements and user-facing interaction patterns
+                    based on interviewing with early users, translating qualitative
+                    feedback into structured product specifications.
+                </li>
+            </ul>
+        </TimeLineElement>
+        <TimeLineElement
+            title="Programmer & Data Analyst at Dickinson College Farm, Dickinson College"
+            subtitle="Apr 2025 - Oct 2025"
+        >
+            <ul class="list-disc ml-4 space-y-1">
+                <li>
+                    <span class="font-semibold">Optimization Modeling:</span> Formulated
+                    a linear programming model with 4 decision variables and 6 structural
+                    constraints on the decision to optimize seasonal crop allocation,
+                    incorporating under yield uncertainty, crop rotation cycles, and
+                    distribution capacity as constraints.
+                </li>
+                <li>
+                    <span class="font-semibold"
+                        >Implementation &amp; Sensitivity Analysis:</span
+                    > Implemented and solved the model in Mosel, compared against the
+                    farm's existing heuristic allocation, and analyzed sensitivity
+                    of optimal solutions to demand shifts.
+                </li>
+            </ul>
+        </TimeLineElement>
+        <TimeLineElement
+            title="Leader & Event Organizer at Girls Who Code, Dickinson College"
+            subtitle="Nov 2024 - Dec 2025"
+        >
+            <ul class="list-disc ml-4 space-y-1">
+                <li>
+                    <span class="font-semibold">Coding Workshops:</span> Organized
+                    weekly instructional modules on Python and Java, focusing on API
+                    integration and open-source library usage for female students from
+                    non-CS majors.
+                </li>
+                <li>
+                    <span class="font-semibold">TarotScope Development:</span> Developed
+                    TarotScope, an interactive tarot web application integrating third-party
+                    APIs and LLM-based response generation to explore the role of algorithmic
+                    guidance in digital mental wellness.
+                </li>
+            </ul>
+        </TimeLineElement>
+    </div>
+
+    <div class="text-2xl w-full font-bold mb-3">Projects</div>
+
+    <div class="time-line-container mb-6">
+        <TimeLineElement
+            title="Airbnb Price Prediction Model — Data Analyst, Georgia Tech"
+            subtitle="Feb 2026 - May 2026"
+        >
+            <ul class="list-disc ml-4 space-y-1">
+                <li>
+                    Aggregated and cleaned Airbnb listing data from 5+ sources, including
+                    web-scraped content, CSV datasets, and geographical APIs, to build
+                    a structured dataset of 1000+ listings with 6 features.
+                </li>
+                <li>
+                    Built Python-based pricing models with pandas and scikit-learn,
+                    visualized market patterns, evaluated performance via R², and identified
+                    dominant price drivers through feature importance analysis.
+                </li>
+            </ul>
+        </TimeLineElement>
+        <TimeLineElement
+            title="Self-Composting Mapping Project — Investigator & GIS Analyst, Dickinson College"
+            subtitle="May 2025 - Nov 2025"
+        >
+            <ul class="list-disc ml-4 space-y-1">
+                <li>
+                    Conducted a literature assessment of decentralized composting systems
+                    by reviewing 6+ biological waste management studies and formulated
+                    a campus spatial framework by GIS for Dickinson College's sustainability
+                    planning.
+                </li>
+                <li>
+                    Constructed a multi-criteria decision-making model integrating
+                    biological waste logistics, odor zones, soil, and accessibility
+                    to rank candidate sites, formalizing a spatial planning problem
+                    as a structured decision over competing criteria.
+                </li>
+            </ul>
+        </TimeLineElement>
+    </div>
+
+    <div class="text-2xl w-full font-bold mb-3">Research Interests</div>
+
+    <ul class="list-disc mx-5 mb-6 space-y-1">
+        <li>
+            <span class="font-semibold">Learning and Optimization Dynamics:</span> Interested
+            in how learning systems behave in uncertain, nonstationary environments,
+            with a focus on how temporal dependence, feedback, and underlying structure
+            shape decision-making and performance.
+        </li>
+        <li>
+            <span class="font-semibold"
+                >Structured Sequential Decision-Making:</span
+            > Interested in modeling decisions where the objective is not fixed and
+            the choice depends on history, where nonstationarity and history dependence
+            are the object of study rather than complications to remove.
+        </li>
+        <li>
+            <span class="font-semibold">Behavior and Interpretable Models:</span> Interested
+            in probabilistic and inverse approaches that recover the structure underlying
+            observed behavior, and in how such structure connects learning to the decisions
+            it produces.
+        </li>
+    </ul>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_TITLE, url } from "../config";
+---
+
+<BaseLayout sideBarActiveItemID="home">
+    <div class="pb-12 mt-5">
+        <img src={url('favicon.svg')} alt="" class="w-24 h-24 mb-2" />
+        <div class="text-xl py-1">Hey there</div>
+        <div class="text-5xl font-bold">I'm {SITE_TITLE}</div>
+        <div class="text-xl py-6 leading-relaxed max-w-2xl space-y-4">
+            <p>
+                I'm <span class="font-semibold">Jieyi Wang（王洁怡）</span>, also you can call me
+                <span class="font-semibold">Jinxy</span> ٩(◕‿◕)۶
+            </p>
+            <p>
+                I'm currently studying <span class="font-semibold">Mathematics and Computing</span> at
+                <span class="font-semibold">Georgia Tech</span>, where I spend most of my time thinking about
+                <span class="font-semibold">optimization</span> and
+                <span class="font-semibold">neuro-inspired computing for decision making</span>. I love the moment
+                when a messy real-world problem quietly turns into something you can actually solve, and I'd like
+                to keep digging into that space for a long, long time (๑•̀ㅂ•́)و✧
+            </p>
+            <p>
+                Away from the whiteboard, I like paiting, and excited about
+                architecture design (you can find my Portfolio at Project) Last! I am interested in mysterous stuff and philosophy
+                ପ(๑•ᴗ•๑)ଓ
+            </p>
+            <p>
+                Feel free to look around, and know more about me, I am happy to connect! (｡•̀ᴗ-)✧
+            </p>
+        </div>
+    </div>
+</BaseLayout>

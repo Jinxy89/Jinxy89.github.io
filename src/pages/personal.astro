@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+import { Image } from "astro:assets";
+import { AUTHOR_INITIAL, url } from "src/config";
+---
+
+<BaseLayout
+    title={AUTHOR_INITIAL + " | Personal"}
+    sideBarActiveItemID="personal"
+>
+    <!-- TODO change color according to theme
+    <div class="w-[10rem] mt-5 mb-6">
+        <Image
+            class="fill-current rounded-ac-md"
+            format="webp"
+            width={300}
+            height={300}
+            src={url('favicon.svg')}
+            alt="icon"
+        />
+    </div> -->
+    <div class="w-[10rem] mt-5 mb-6">
+        <Image
+            class="fill-current rounded-ac-md"
+            format="webp"
+            width={300}
+            height={300}
+            src={url('favicon.svg')}
+            alt="icon"
+        />
+    </div>
+    <div class="text-3xl w-full font-bold mb-3">About Me</div>
+
+    <div class="mb-8 max-w-2xl leading-relaxed space-y-3">
+        <p>
+            Hi! I'm <span class="font-semibold">Jieyi Wang</span>, and you can
+            call me <span class="font-semibold">Jinxy</span> ٩(◕‿◕)۶
+        </p>
+        <p>
+            I study <span class="font-semibold">Mathematics and Computing</span>
+            at <span class="font-semibold">Georgia Tech</span>. My focus is
+            <span class="font-semibold">optimization</span> and
+            <span class="font-semibold"
+                >neuro-inspired computing for decision making</span
+            >.I like figuring out how systems choose (｡•̀ᴗ-)✧
+        </p>
+        <p>
+            My interest started in <span class="font-semibold">optimization</span
+            >, then moved toward <span class="font-semibold">online learning</span
+            >. Along the way, what I cared about shifted. The settings I like
+            most are the ones where a system has to act under uncertainty, on
+            limited observations. There, performance seemed to depend less on the
+            update rule. It depended more on what the model assumed about how a
+            decision unfolds over time ( •̀ ω •́ )✧
+        </p>
+        <p>
+            That assumption is the part I keep coming back to. How does structure
+            shape a choice? How does history carry into the next one? I'm just as
+            curious about <span class="font-semibold">optimization</span> and
+            <span class="font-semibold">decision making</span> as I was at the
+            start, only now I ask better questions about them. I'd like to keep
+            studying this for a long time (๑•̀ㅂ•́)و✧
+        </p>
+
+        <p>
+            Outside of that, I paint. I'm also a little obsessed with
+            architecture — floor plans, light, how a building quietly tells you
+            where to walk. Painting taught me to look before judging. Buildings
+            taught me that good structure feels effortless. Both show up in how
+            I think about math ପ(๑•ᴗ•๑)ଓ
+        </p>
+        <p>
+           Feel free to reach out — I'm always happy to Connect (｡･ω･｡)ﾉ♡
+        </p>
+    </div>
+
+    <!-- <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Education</div>
+    </div>
+
+
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Experience</div>
+    </div>
+
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Certifications</div>
+    </div>
+
+    <ul class="list-disc mx-6 mb-10 grid gap-2">
+        <li>
+            <a href="#" target="_blank"> Certification Name (with link)</a>
+        </li>
+        <li>
+            <a href="#" target="_blank"> Certification Name (with link)</a>
+        </li>
+    </ul>
+
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Skills</div>
+    </div>
+
+    <ul class="list-disc md:columns-5 columns-2 mx-6">
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+        <li>Skill Name</li>
+    </ul> -->
+</BaseLayout>

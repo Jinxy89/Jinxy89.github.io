@@ -1,0 +1,116 @@
+---
+import type { Tag } from "../lib/tags";
+
+interface Props {
+  tags: readonly Tag[];
+}
+
+const { tags } = Astro.props;
+---
+
+<nav aria-label="Filter by tag" data-tagbar class="flex flex-wrap gap-2 mb-6">
+  <button
+    type="button"
+    class="tag-chip"
+    data-tag="all"
+    aria-pressed="true"
+    style="--tag-color:#8d6e63"
+  >
+    All
+  </button>
+  {
+    tags.map((tag) => (
+      <button
+        type="button"
+        class="tag-chip"
+        data-tag={tag.slug}
+        aria-pressed="false"
+        style={`--tag-color:${tag.color}`}
+      >
+        {tag.label}
+      </button>
+    ))
+  }
+</nav>
+
+<p data-tagbar-empty hidden class="mb-6 opacity-70">
+  Nothing filed under this tag yet. Check back later!
+</p>
+
+<style>
+  .tag-chip {
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--tag-color);
+    border: 1px solid color-mix(in srgb, var(--tag-color) 45%, transparent);
+    background: color-mix(in srgb, var(--tag-color) 12%, transparent);
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      transform 200ms ease;
+  }
+
+  .tag-chip:hover {
+    background: color-mix(in srgb, var(--tag-color) 24%, transparent);
+    transform: translateY(-1px);
+  }
+
+  .tag-chip:focus-visible {
+    outline: 2px solid var(--tag-color);
+    outline-offset: 2px;
+  }
+
+  .tag-chip[aria-pressed="true"] {
+    background: var(--tag-color);
+    color: #fdfaf3;
+    border-color: var(--tag-color);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tag-chip {
+      transition: none;
+    }
+    .tag-chip:hover {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  const bar = document.querySelector<HTMLElement>("[data-tagbar]");
+  const empty = document.querySelector<HTMLElement>("[data-tagbar-empty]");
+
+  if (bar) {
+    const chips = Array.from(
+      bar.querySelectorAll<HTMLButtonElement>("button[data-tag]"),
+    );
+    const posts = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-post-tags]"),
+    );
+
+    const applyFilter = (active: string) => {
+      let visible = 0;
+
+      posts.forEach((post) => {
+        const tags = (post.dataset.postTags || "").split(",").filter(Boolean);
+        const matches = active === "all" || tags.includes(active);
+        post.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      if (empty) empty.hidden = visible > 0;
+    };
+
+    bar.addEventListener("click", (event) => {
+      const chip = (event.target as HTMLElement).closest<HTMLButtonElement>(
+        "button[data-tag]",
+      );
+      if (!chip) return;
+
+      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+      applyFilter(chip.dataset.tag || "all");
+    });
+  }
+</script>
