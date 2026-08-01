@@ -9,7 +9,7 @@ import rehypeKatex from "rehype-katex";
 // https://astro.build/config
 export default defineConfig({
   // User site: served from the domain root, so no base path.
-  site: "https://jinxywang.github.io",
+  site: "https://jinxy89.github.io",
   base: "/",
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
