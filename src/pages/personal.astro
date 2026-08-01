@@ -75,6 +75,23 @@ import { AUTHOR_INITIAL, url } from "src/config";
         </p>
     </div>
 
+    <div class="text-3xl w-full font-bold mb-3">Contact</div>
+
+    <ul class="mb-8 max-w-2xl leading-relaxed space-y-2 list-none">
+        <li>
+            <span class="opacity-70">School</span>
+            <a class="email-link" href="mailto:jwang3748@gatech.edu">
+                jwang3748@gatech.edu
+            </a>
+        </li>
+        <li>
+            <span class="opacity-70">Personal</span>
+            <a class="email-link" href="mailto:wangjieyi0809@outlook.com">
+                wangjieyi0809@outlook.com
+            </a>
+        </li>
+    </ul>
+
     <!-- <div class="mb-5">
         <div class="text-3xl w-full font-bold">Education</div>
     </div>
@@ -119,3 +136,29 @@ import { AUTHOR_INITIAL, url } from "src/config";
         <li>Skill Name</li>
     </ul> -->
 </BaseLayout>
+
+<style>
+    /* Warm brown underline, same family as the tag chips and the home email. */
+    .email-link {
+        color: #8d6e63;
+        text-decoration: underline;
+        text-decoration-color: color-mix(in srgb, #8d6e63 40%, transparent);
+        text-underline-offset: 3px;
+        transition: text-decoration-color 200ms ease;
+    }
+
+    .email-link:hover {
+        text-decoration-color: #8d6e63;
+    }
+
+    .email-link:focus-visible {
+        outline: 2px solid #8d6e63;
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .email-link {
+            transition: none;
+        }
+    }
+</style>
