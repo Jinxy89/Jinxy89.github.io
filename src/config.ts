@@ -4,7 +4,8 @@
 export const SITE_TITLE = "Jieyi Wang";
 export const AUTHOR_NAME = "Jieyi";
 export const AUTHOR_INITIAL = "JW";
-export const SITE_DESCRIPTION = "Your Name's personal website.";
+export const SITE_DESCRIPTION =
+  "Jieyi Wang (Jinxy) — Mathematics and Computing student at Georgia Tech, working on optimization, online learning, and decision making under uncertainty.";
 export const GENERATE_SLUG_FROM_TITLE = true;
 export const TRANSITION_API = true;
 
