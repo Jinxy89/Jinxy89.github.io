@@ -23,8 +23,6 @@ import { SITE_TITLE, url } from "../config";
                 >
                     <svg
                         viewBox="0 0 24 24"
-                        width="18"
-                        height="18"
                         fill="currentColor"
                         aria-hidden="true"
                         focusable="false"
@@ -87,21 +85,32 @@ import { SITE_TITLE, url } from "../config";
         outline-offset: 2px;
     }
 
-    /* Same warm-brown family as the chip, so the icon reads as part of the row. */
+    /* Framed square sibling of the chip: same border, tint, padding and content
+       height, so the two sit at exactly the same height on the row. */
     .linkedin-link {
         --tag-color: #8d6e63;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        padding: 0.3rem;
+        border-radius: 0.5rem;
         color: var(--tag-color);
-        opacity: 0.85;
+        border: 1px solid color-mix(in srgb, var(--tag-color) 45%, transparent);
+        background: color-mix(in srgb, var(--tag-color) 12%, transparent);
         transition:
-            opacity 200ms ease,
+            background-color 200ms ease,
             transform 200ms ease;
     }
 
+    /* Matches the chip's 1.25rem line-height, which is what sets its height. */
+    .linkedin-link svg {
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
     .linkedin-link:hover {
-        opacity: 1;
+        background: color-mix(in srgb, var(--tag-color) 24%, transparent);
         transform: translateY(-1px);
     }
 
